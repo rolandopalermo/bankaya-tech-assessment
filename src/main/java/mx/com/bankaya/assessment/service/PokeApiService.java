@@ -29,7 +29,7 @@ public class PokeApiService {
                 return null;
             }
         } catch (IOException ex) {
-            log.error("[findFirstPokemonInfoByName] Unable to fetch pokemon info to pokemon name: {}", pokemonName, ex);
+            log.error("[findFirstPokemonInfoByName] Unable to fetch pokemon info for name: {}", pokemonName, ex);
             throw new InternalServerException("Unable to fetch pokemon info");
         }
     }

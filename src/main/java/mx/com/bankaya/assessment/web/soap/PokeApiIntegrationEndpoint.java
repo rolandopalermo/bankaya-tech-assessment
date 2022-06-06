@@ -19,7 +19,7 @@ public class PokeApiIntegrationEndpoint {
 
     @PayloadRoot(namespace = POKE_API_URI_NAMESPACE, localPart = "pokeApiAbilitiesRequest")
     @ResponsePayload
-    public PokeApiAbilitiesResponse abilities(@RequestPayload PokeApiAbilitiesRequest req) {
+    public PokeApiAbilitiesResponse pokeApiAbilities(@RequestPayload PokeApiAbilitiesRequest req) {
         return pokeApiIntegrationService.getAbilities(req);
     }
 
