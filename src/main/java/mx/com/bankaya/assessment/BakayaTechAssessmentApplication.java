@@ -1,4 +1,4 @@
-package mx.com.bankaya.bankayatechassessment;
+package mx.com.bankaya.assessment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
