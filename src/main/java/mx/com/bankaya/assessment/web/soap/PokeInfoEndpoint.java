@@ -3,7 +3,7 @@ package mx.com.bankaya.assessment.web.soap;
 import lombok.RequiredArgsConstructor;
 import mx.com.bakaya.soap.tech_assestment.PokeApiAbilitiesRequest;
 import mx.com.bakaya.soap.tech_assestment.PokeApiAbilitiesResponse;
-import mx.com.bankaya.assessment.service.PokeApiIntegrationService;
+import mx.com.bankaya.assessment.service.PokeInfoService;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -13,14 +13,14 @@ import static mx.com.bankaya.assessment.util.Constants.SoapConstants.POKE_API_UR
 
 @Endpoint
 @RequiredArgsConstructor
-public class PokeApiIntegrationEndpoint {
+public class PokeInfoEndpoint {
 
-    private final PokeApiIntegrationService pokeApiIntegrationService;
+    private final PokeInfoService pokeInfoService;
 
     @PayloadRoot(namespace = POKE_API_URI_NAMESPACE, localPart = "pokeApiAbilitiesRequest")
     @ResponsePayload
     public PokeApiAbilitiesResponse pokeApiAbilities(@RequestPayload PokeApiAbilitiesRequest req) {
-        return pokeApiIntegrationService.getAbilities(req);
+        return pokeInfoService.getAbilities(req);
     }
 
 }

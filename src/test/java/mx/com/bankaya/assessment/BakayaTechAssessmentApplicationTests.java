@@ -1,11 +1,13 @@
 package mx.com.bankaya.assessment;
 
-//@SpringBootTest
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
 class BakayaTechAssessmentApplicationTests {
 
-	/*
-	@Test
-	void contextLoads() {
-	}*/
+    @Test
+    void contextLoads() {
+    }
 
 }

@@ -18,9 +18,9 @@ public class AuditLogService {
     private final HttpServletRequest httpServletRequest;
     private final AuditLogRepository auditLogRepository;
 
-    public AuditLog save(JoinPoint joinPoint) {
+    public AuditLog save(String methodName) {
         AuditLog auditLog = new AuditLog();
-        auditLog.setMethod(joinPoint.getSignature().getName());
+        auditLog.setMethod(methodName);
         auditLog.setRemoteIpAddress(this.httpServletRequest.getRemoteAddr());
         auditLog.setCreationDate(LocalDateTime.now());
         auditLogRepository.save(auditLog);

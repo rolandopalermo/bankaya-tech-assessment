@@ -18,7 +18,7 @@ public class LoggingAspect {
 
     @Before("execution(public * mx.com.bankaya.assessment.web.soap..*(..))")
     public void soapEndpoints(JoinPoint joinPoint) {
-        auditLogService.save(joinPoint);
+        auditLogService.save(joinPoint.getSignature().getName());
     }
 
 }
