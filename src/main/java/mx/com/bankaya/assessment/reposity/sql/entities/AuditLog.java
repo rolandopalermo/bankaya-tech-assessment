@@ -1,6 +1,7 @@
 package mx.com.bankaya.assessment.reposity.sql.entities;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Data
+@ToString
 @Entity
 @Table(name = "audit_logs")
 public class AuditLog {
