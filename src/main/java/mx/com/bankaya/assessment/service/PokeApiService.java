@@ -33,7 +33,7 @@ public class PokeApiService {
                 throw new ServiceFaultException(ERROR, new ServiceFault(
                         errorMessage, "Pokemon information for name " + pokemonName + " is not available"));
             }
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             log.error("[findFirstPokemonInfoByName] Unable to fetch pokemon info for name: {}", pokemonName, ex);
             throw new ServiceFaultException(ERROR, new ServiceFault(
                     "INTERNAL_SERVER_ERROR", "Unable to fetch pokemon info for name " + pokemonName));
