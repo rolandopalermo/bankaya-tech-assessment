@@ -1,5 +1,6 @@
 package mx.com.bankaya.assessment.mapper;
 
+import mx.com.bakaya.soap.tech_assestment.Abilities;
 import mx.com.bankaya.assessment.dto.pokeapi.AbilityDto;
 import mx.com.bankaya.assessment.dto.pokeapi.AbilityItemDto;
 import org.junit.jupiter.api.Test;
@@ -29,12 +30,12 @@ class AbilitiesMapperTest {
 
     @Test
     void given_ValidDto_whenConvert_thenSuccess() {
-        var abilityDto = new AbilityDto();
-        var dto = new AbilityItemDto();
+        AbilityDto abilityDto = new AbilityDto();
+        AbilityItemDto dto = new AbilityItemDto();
         dto.setAbility(abilityDto);
         dto.setSlot(BigInteger.ONE);
         dto.setIsHidden(true);
-        var result = abilitiesMapper.convert(dto);
+        Abilities result = abilitiesMapper.convert(dto);
         assertNotNull(result);
         assertTrue(result.isIsHidden());
         assertTrue(BigInteger.ONE.equals(result.getSlot()));

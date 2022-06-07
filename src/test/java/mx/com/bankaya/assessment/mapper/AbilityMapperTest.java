@@ -1,5 +1,6 @@
 package mx.com.bankaya.assessment.mapper;
 
+import mx.com.bakaya.soap.tech_assestment.Ability;
 import mx.com.bankaya.assessment.dto.pokeapi.AbilityDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,10 +23,10 @@ class AbilityMapperTest {
 
     @Test
     void given_ValidDto_whenConvert_thenSuccess() {
-        var dto = new AbilityDto();
+        AbilityDto dto = new AbilityDto();
         dto.setUrl("https://localhost");
         dto.setName("JUnit");
-        var result = abilityMapper.convert(dto);
+        Ability result = abilityMapper.convert(dto);
         assertNotNull(result);
         assertEquals("https://localhost", result.getUrl());
         assertEquals("JUnit", result.getName());

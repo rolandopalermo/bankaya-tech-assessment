@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="42680358-8629-4eb2-809d-5d682a890111" activeEnvironment="Default" name="soapPokeApiIntegration" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="5dddb808-f289-45d1-b32f-6d1aa745c5f7" wsaVersion="NONE" name="SoapPokeapiIntegrationPortSoap11" type="wsdl" bindingName="{http://bakaya.com.mx/soap/tech_assestment}SoapPokeapiIntegrationPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/soap/poke-api-integration/ws/soapPokeApiIntegration.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/soap/poke-api-integration/ws/soapPokeApiIntegration.wsdl"><con:part><con:url>http://localhost:8080/soap/poke-api-integration/ws/soapPokeApiIntegration.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://bakaya.com.mx/soap/tech_assestment" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://bakaya.com.mx/soap/tech_assestment" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://bakaya.com.mx/soap/tech_assestment">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://bakaya.com.mx/soap/tech_assestment" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="pokeApiAbilitiesRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemonName" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pokeApiAbilitiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="abilities" type="tns:abilities"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pokeApiBaseExperienceRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemonName" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pokeApiBaseExperienceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="baseExperience" type="xs:decimal"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pokeApiHeldItemsRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemonName" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pokeApiHeldItemsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="heldItems" type="tns:heldItems"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pokeApiIdRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="pokemonName" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="pokeApiIdResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="abilities">
+        <xs:sequence>
+          <xs:element name="ability" type="tns:ability"/>
+          <xs:element name="slot" type="xs:integer"/>
+          <xs:element name="isHidden" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ability">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="heldItems">
+        <xs:sequence>
+          <xs:element name="item" type="tns:item"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="versionDetails" type="tns:versionDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="item">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="versionDetails">
+        <xs:sequence>
+          <xs:element name="rarity" type="xs:decimal"/>
+          <xs:element name="version" type="tns:version"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="version">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="pokeApiHeldItemsRequest">
+    <wsdl:part element="tns:pokeApiHeldItemsRequest" name="pokeApiHeldItemsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pokeApiIdRequest">
+    <wsdl:part element="tns:pokeApiIdRequest" name="pokeApiIdRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pokeApiAbilitiesRequest">
+    <wsdl:part element="tns:pokeApiAbilitiesRequest" name="pokeApiAbilitiesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pokeApiIdResponse">
+    <wsdl:part element="tns:pokeApiIdResponse" name="pokeApiIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pokeApiBaseExperienceRequest">
+    <wsdl:part element="tns:pokeApiBaseExperienceRequest" name="pokeApiBaseExperienceRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pokeApiAbilitiesResponse">
+    <wsdl:part element="tns:pokeApiAbilitiesResponse" name="pokeApiAbilitiesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pokeApiHeldItemsResponse">
+    <wsdl:part element="tns:pokeApiHeldItemsResponse" name="pokeApiHeldItemsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pokeApiBaseExperienceResponse">
+    <wsdl:part element="tns:pokeApiBaseExperienceResponse" name="pokeApiBaseExperienceResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SoapPokeapiIntegrationPort">
+    <wsdl:operation name="pokeApiHeldItems">
+      <wsdl:input message="tns:pokeApiHeldItemsRequest" name="pokeApiHeldItemsRequest"></wsdl:input>
+      <wsdl:output message="tns:pokeApiHeldItemsResponse" name="pokeApiHeldItemsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pokeApiId">
+      <wsdl:input message="tns:pokeApiIdRequest" name="pokeApiIdRequest"></wsdl:input>
+      <wsdl:output message="tns:pokeApiIdResponse" name="pokeApiIdResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pokeApiAbilities">
+      <wsdl:input message="tns:pokeApiAbilitiesRequest" name="pokeApiAbilitiesRequest"></wsdl:input>
+      <wsdl:output message="tns:pokeApiAbilitiesResponse" name="pokeApiAbilitiesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pokeApiBaseExperience">
+      <wsdl:input message="tns:pokeApiBaseExperienceRequest" name="pokeApiBaseExperienceRequest"></wsdl:input>
+      <wsdl:output message="tns:pokeApiBaseExperienceResponse" name="pokeApiBaseExperienceResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapPokeapiIntegrationPortSoap11" type="tns:SoapPokeapiIntegrationPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="pokeApiHeldItems">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="pokeApiHeldItemsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pokeApiHeldItemsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pokeApiId">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="pokeApiIdRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pokeApiIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pokeApiAbilities">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="pokeApiAbilitiesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pokeApiAbilitiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pokeApiBaseExperience">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="pokeApiBaseExperienceRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pokeApiBaseExperienceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SoapPokeapiIntegrationPortService">
+    <wsdl:port binding="tns:SoapPokeapiIntegrationPortSoap11" name="SoapPokeapiIntegrationPortSoap11">
+      <soap:address location="http://localhost:8080/soap/poke-api-integration/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/soap/poke-api-integration/ws</con:endpoint></con:endpoints><con:operation id="7eb3a988-60df-43aa-a49e-361dae283129" isOneWay="false" action="" name="pokeApiAbilities" bindingOperationName="pokeApiAbilities" type="Request-Response" outputName="pokeApiAbilitiesResponse" inputName="pokeApiAbilitiesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="45585a68-cc84-473a-9377-c7cca3cecb1f" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap/poke-api-integration/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tech="http://bakaya.com.mx/soap/tech_assestment">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tech:pokeApiAbilitiesRequest>
+         <tech:pokemonName>pikachu</tech:pokemonName>
+      </tech:pokeApiAbilitiesRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bakaya.com.mx/soap/tech_assestment/SoapPokeapiIntegrationPort/pokeApiAbilitiesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fe8ea00d-5cc1-4219-a951-6b90139653ee" isOneWay="false" action="" name="pokeApiBaseExperience" bindingOperationName="pokeApiBaseExperience" type="Request-Response" outputName="pokeApiBaseExperienceResponse" inputName="pokeApiBaseExperienceRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ab1df561-03dd-4b56-9ef9-371d4c485b5e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap/poke-api-integration/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tech="http://bakaya.com.mx/soap/tech_assestment">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tech:pokeApiBaseExperienceRequest>
+         <tech:pokemonName>pikachu</tech:pokemonName>
+      </tech:pokeApiBaseExperienceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bakaya.com.mx/soap/tech_assestment/SoapPokeapiIntegrationPort/pokeApiBaseExperienceRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ff345ccf-9aaa-497f-9d54-813a082eadb1" isOneWay="false" action="" name="pokeApiHeldItems" bindingOperationName="pokeApiHeldItems" type="Request-Response" outputName="pokeApiHeldItemsResponse" inputName="pokeApiHeldItemsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5a1468c1-bc9a-44d9-89e5-9ede6254bcc5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap/poke-api-integration/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tech="http://bakaya.com.mx/soap/tech_assestment">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tech:pokeApiHeldItemsRequest>
+         <tech:pokemonName>pikachu</tech:pokemonName>
+      </tech:pokeApiHeldItemsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bakaya.com.mx/soap/tech_assestment/SoapPokeapiIntegrationPort/pokeApiHeldItemsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="13c163ca-ebe6-4a1c-a995-95db2af67ed0" isOneWay="false" action="" name="pokeApiId" bindingOperationName="pokeApiId" type="Request-Response" outputName="pokeApiIdResponse" inputName="pokeApiIdRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7fc35ad1-a12d-428c-8cef-911202b8375e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/soap/poke-api-integration/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tech="http://bakaya.com.mx/soap/tech_assestment">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tech:pokeApiIdRequest>
+         <tech:pokemonName>pikachu</tech:pokemonName>
+      </tech:pokeApiIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bakaya.com.mx/soap/tech_assestment/SoapPokeapiIntegrationPort/pokeApiIdRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

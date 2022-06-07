@@ -14,7 +14,7 @@ public class PokeApiResponseDto {
     private BigDecimal baseExperience;
     @JsonProperty("held_items")
     private List<HeldItemDto> heldItems;
-    private Long id;
+    private String id;
     private String name;
     /*@JsonProperty("location_area_encounters")
     private List<LocationAreaEncounterDto> locationAreaEncounters;*/
